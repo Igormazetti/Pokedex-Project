@@ -1,10 +1,17 @@
 import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import PokemonsProvider from "./context/PokemonsContext";
+import { GlobalStyle } from "./styles/global";
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <PokemonsProvider>
+      <div>
+        <Header />
+        <Dashboard />
+        <GlobalStyle />
+      </div>
+    </PokemonsProvider>
   );
 }
 
