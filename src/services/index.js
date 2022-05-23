@@ -4,3 +4,10 @@ export default async function getPokemons(min) {
   const response = await request.json();
   return response.results;
 }
+
+export async function getPokemonDetails(url) {
+  const URL = url;
+  const request = await fetch(URL);
+  const response = await request.json();
+  return response;
+}

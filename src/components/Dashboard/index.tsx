@@ -3,6 +3,11 @@ import { Container } from "./styles";
 import { PokemonsContext } from "../../context/PokemonsContext";
 import PokemonCard from "../PokemonCard/index";
 
+interface pokeInfo {
+  name: string;
+  url: string;
+}
+
 export default function Dashboard() {
   const { pokemons, setPokemons, setVal } = useContext(PokemonsContext);
   return (
@@ -12,8 +17,12 @@ export default function Dashboard() {
       </div>
       <div>
         {pokemons.length > 0 ? (
-          pokemons.map((pokemon) => (
-            <PokemonCard name={pokemon.name} image={pokemon.url} />
+          pokemons.map((pokemon: pokeInfo) => (
+            <PokemonCard
+              key={pokemon.name}
+              name={pokemon.name}
+              image={pokemon.url}
+            />
           ))
         ) : (
           <span>Aguarde . . .</span>
