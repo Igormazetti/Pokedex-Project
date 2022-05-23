@@ -21,7 +21,7 @@ export default function Dashboard() {
             <PokemonCard
               key={pokemon.name}
               name={pokemon.name}
-              image={pokemon.url}
+              url={pokemon.url}
             />
           ))
         ) : (
