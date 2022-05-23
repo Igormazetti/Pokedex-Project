@@ -15,4 +15,10 @@ export const Container = styled.main`
     background-color: #696969;
     border-radius: 0.25rem 0.25rem 0 0;
   }
+
+  span {
+    font-size: 18px;
+    margin-left: 45%;
+    margin-top: 100px;
+  }
 `;
