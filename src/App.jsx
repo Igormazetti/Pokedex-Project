@@ -1,17 +1,15 @@
-import Header from "./components/Header";
-import Dashboard from "./components/Dashboard";
-import PokemonsProvider from "./context/PokemonsContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalStyle } from "./styles/global";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <PokemonsProvider>
-      <div>
-        <Header />
-        <Dashboard />
-        <GlobalStyle />
-      </div>
-    </PokemonsProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <GlobalStyle />
+    </BrowserRouter>
   );
 }
 
