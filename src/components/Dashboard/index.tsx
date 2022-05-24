@@ -16,17 +16,19 @@ export default function Dashboard() {
         <h3>Pokémons</h3>
       </div>
       <div>
-        {pokemons.length > 0 ? (
-          pokemons.map((pokemon: pokeInfo) => (
-            <PokemonCard
-              key={pokemon.name}
-              name={pokemon.name}
-              url={pokemon.url}
-            />
-          ))
-        ) : (
-          <span>Aguarde . . .</span>
-        )}
+        <div className="card-container">
+          {pokemons.length > 0 ? (
+            pokemons.map((pokemon: pokeInfo) => (
+              <PokemonCard
+                key={pokemon.name}
+                name={pokemon.name}
+                url={pokemon.url}
+              />
+            ))
+          ) : (
+            <span>Aguarde . . .</span>
+          )}
+        </div>
       </div>
     </Container>
   );

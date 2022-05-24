@@ -19,13 +19,13 @@ export default function PokemonCard({ name, url }: Pokemon) {
   }, []);
 
   return (
-    <div>
-      <Card>
+    <Card>
+      <div>
         <Link to={`/caracteristicas/${name}`}>
           <img src={pokeImg} alt={`imagem de ${name}`} />
         </Link>
         <h4>{name}</h4>
-      </Card>
-    </div>
+      </div>
+    </Card>
   );
 }
