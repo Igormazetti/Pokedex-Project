@@ -4,7 +4,7 @@
 
 ## Utilizado até o momento no deszenvolvimento do projeto:
 
-# React.JS
-# Styled Components
-# React Router v6
-# TypeScript
+=> React.JS
+=> Styled Components
+=> React Router v6
+=> TypeScript
