@@ -1,5 +1,5 @@
-### Pokedex Project
+## Pokedex Project
 
-## Em progresso
+### Em progresso
 
 
