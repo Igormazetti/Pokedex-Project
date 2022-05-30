@@ -20,6 +20,7 @@ export default function PokemonsProvider({ children }) {
     pokemons,
     setPokemons,
     setVal,
+    val,
   };
 
   return (

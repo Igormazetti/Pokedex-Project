@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Container } from "./styles";
 import { PokemonsContext } from "../../context/PokemonsContext";
 import PokemonCard from "../PokemonCard/index";
@@ -9,7 +9,21 @@ interface pokeInfo {
 }
 
 export default function Dashboard() {
-  const { pokemons, setPokemons, setVal } = useContext(PokemonsContext);
+  const { pokemons, setVal, val } = useContext(PokemonsContext);
+  const [btnDisabled, setBtnDisabled] = useState(true);
+
+  useEffect(() => {
+    val > 0 ? setBtnDisabled(false) : setBtnDisabled(true);
+  }, [val]);
+
+  const handleNextBtn = () => {
+    setVal(val + 24);
+  };
+
+  const handlePrevBtn = () => {
+    val > 0 && setVal(val - 24);
+  };
+
   return (
     <Container>
       <div className="title">
@@ -29,6 +43,14 @@ export default function Dashboard() {
             <span>Aguarde . . .</span>
           )}
         </div>
+      </div>
+      <div id="btn-container">
+        <button type="button" disabled={btnDisabled} onClick={handlePrevBtn}>
+          Prev
+        </button>
+        <button type="button" onClick={handleNextBtn}>
+          Next
+        </button>
       </div>
     </Container>
   );

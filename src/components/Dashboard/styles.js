@@ -36,4 +36,16 @@ export const Container = styled.main`
     margin-left: 45%;
     margin-top: 100px;
   }
+
+  #btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5px;
+
+    button {
+      margin-bottom: 25px;
+      cursor: pointer;
+    }
+  }
 `;
