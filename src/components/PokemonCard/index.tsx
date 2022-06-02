@@ -16,7 +16,7 @@ export default function PokemonCard({ name, url }: Pokemon) {
       setPokeImg(info.sprites.front_default);
     };
     getData();
-  }, []);
+  });
 
   return (
     <Card>
