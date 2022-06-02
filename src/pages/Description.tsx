@@ -1,10 +1,10 @@
 import React from "react";
-import Caracteristics from "../components/Caracteristics/index";
+import DescriptionDashboard from "../components/DescriptionDashboard/index";
 
 export default function Description() {
   return (
     <>
-      <Caracteristics />
+      <DescriptionDashboard />
     </>
   );
 }

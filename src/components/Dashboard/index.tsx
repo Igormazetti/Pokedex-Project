@@ -40,18 +40,20 @@ export default function Dashboard() {
               />
             ))
           ) : (
-            <span>Aguarde . . .</span>
+            <span>Pokémon não encontrado!</span>
           )}
         </div>
       </div>
-      <div id="btn-container">
-        <button type="button" disabled={btnDisabled} onClick={handlePrevBtn}>
-          Prev
-        </button>
-        <button type="button" onClick={handleNextBtn}>
-          Next
-        </button>
-      </div>
+      {pokemons.length > 23 && (
+        <div id="btn-container">
+          <button type="button" disabled={btnDisabled} onClick={handlePrevBtn}>
+            Prev
+          </button>
+          <button type="button" onClick={handleNextBtn}>
+            Next
+          </button>
+        </div>
+      )}
     </Container>
   );
 }

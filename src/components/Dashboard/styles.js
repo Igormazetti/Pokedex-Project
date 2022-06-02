@@ -46,6 +46,10 @@ export const Container = styled.main`
     button {
       margin-bottom: 25px;
       cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
   }
 `;

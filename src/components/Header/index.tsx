@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Content } from "./styles";
 import SearchIcon from "../../assets/search-icon.png";
 import Pokeball from "../../assets/openpokeball.png";
+import { usePokemons } from "../../context/PokemonsContext";
+
+interface pokeInt {
+  name: string;
+  url: string;
+}
 
 export default function Header() {
   const [pokedex, setPokedex] = useState(false);
+  const [pokemonSearch, setPokemonSearch] = useState("");
+  const { backupPokemons, setPokemons } = usePokemons();
+
+  const handleSearchBtn = () => {
+    const searchpoke = backupPokemons.filter((poke: pokeInt) =>
+      poke.name.toLowerCase().includes(pokemonSearch.toLowerCase())
+    );
+    setPokemons(searchpoke);
+  };
 
   return (
     <Container>
@@ -18,9 +33,14 @@ export default function Header() {
         <div>
           <label htmlFor="find">
             Busque um Pokémon pelo nome
-            <input type="text" name="find" id="find" />
+            <input
+              type="text"
+              name="find"
+              id="find"
+              onChange={(e) => setPokemonSearch(e.target.value)}
+            />
           </label>
-          <button id="searchbtn" type="button">
+          <button id="searchbtn" type="button" onClick={handleSearchBtn}>
             <img src={SearchIcon} alt="search" />
           </button>
         </div>
