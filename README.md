@@ -1,8 +1,8 @@
 ## Pokedex Project
 
-### Projeto em progresso
+### Projeto em progresso...
 
-## 🚀Tecnologias utilizadas até o momento:
+### 🚀Tecnologias utilizadas até o momento:
 
   - JavaScript
   - TypeScript
