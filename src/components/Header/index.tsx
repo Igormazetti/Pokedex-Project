@@ -19,6 +19,7 @@ export default function Header() {
       poke.name.toLowerCase().includes(pokemonSearch.toLowerCase())
     );
     setPokemons(searchpoke);
+    setPokemonSearch("");
   };
 
   return (
@@ -37,6 +38,7 @@ export default function Header() {
               type="text"
               name="find"
               id="find"
+              value={pokemonSearch}
               onChange={(e) => setPokemonSearch(e.target.value)}
             />
           </label>

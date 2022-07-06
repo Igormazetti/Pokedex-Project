@@ -14,6 +14,10 @@ export const Container = styled.main`
     width: 100%;
   }
 
+  h3 {
+    color: #fffeee;
+  }
+
   .title {
     display: flex;
     align-items: center;
