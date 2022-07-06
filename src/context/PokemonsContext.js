@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import getPokemons from "../services";
+import {getPokemons, getEveryPokemon} from "../services";
 
 export const PokemonsContext = createContext();
 
@@ -9,10 +9,17 @@ export default function PokemonsProvider({ children }) {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
+    const getEvery = async () => {
+      const info = await getEveryPokemon();
+      setBackupPokemons(info);
+    };
+    getEvery();
+  }, []);
+
+  useEffect(() => {
     const getAllPokemons = async () => {
       const info = await getPokemons(val);
       setPokemons(info);
-      setBackupPokemons(info);
     };
     getAllPokemons();
   }, [val]);
